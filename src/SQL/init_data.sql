@@ -1,0 +1,2 @@
+INSERT  INTO TB_USER (USER_NAME, US_PASSWORD)
+VALUES ('admin','password');
