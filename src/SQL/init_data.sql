@@ -1,2 +1,2 @@
-INSERT  INTO TB_USER (USER_NAME, US_PASSWORD)
-VALUES ('admin','password');
+INSERT INTO TB_USER (US_USERNAME, US_PASSWORD)
+VALUES ('admin', 'password');
