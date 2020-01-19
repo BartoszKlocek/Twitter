@@ -18,7 +18,7 @@
 
     <!-- Bootstrap core CSS -->
 
-    <%--&lt;%&ndash;    <link href="css/bootstrap.css" rel="stylesheet">&ndash;%&gt; to jest skonfigurowany skrot--%>
+    <%--&lt;%&ndash;    <link href="css/bootstrap.css" rel="stylesheet">&ndash;%&gt; to jest skonfigurowany skrot - sciezka bezwzgledna--%>
     <link href="${pageContext.request.contextPath}/css/bootstrap.css" rel="stylesheet">
 
 </head>

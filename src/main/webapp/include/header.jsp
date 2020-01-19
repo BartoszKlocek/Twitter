@@ -13,7 +13,9 @@
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <%--&lt;%&ndash;    <link href="css/bootstrap.css" rel="stylesheet">&ndash;%&gt; to jest skonfigurowany skrot - sciezka bezwzgledna--%>
+                <%--                <link href="${pageContext.request.contextPath}/login.jsp">--%>
+                <a class="nav-link" href="${pageContext.request.contextPath}login.jsp">Log in</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#">Disabled</a>
