@@ -26,3 +26,15 @@ public class HibernateUtil {
         return SESSION_FACTORY;
     }
 }
+
+//albo, to jest to samo co wyzej
+//private static SessionFactory buildSessionFactory() {
+//    try {
+//        return new Configuration()
+//                .configure()
+//                .buildSessionFactory();
+//    } catch (Throwable ex) {
+//        System.err.println("Initial SessionFactory creation failed." + ex);
+//        throw new ExceptionInInitializerError(ex);
+//    }
+//}
