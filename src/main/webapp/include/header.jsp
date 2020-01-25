@@ -15,6 +15,11 @@
                 <a class="nav-link" href="${pageContext.request.contextPath}/">Home<span
                         class="sr-only">(current)</span></a>
             </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="${pageContext.request.contextPath}/add-article.jsp">Add article</a>
+            </li>
+
             <li class="nav-item">
                 <%--&lt;%&ndash;    <link href="css/bootstrap.css" rel="stylesheet">&ndash;%&gt; to jest skonfigurowany skrot - sciezka bezwzgledna--%>
                 <%--                <link href="${pageContext.request.contextPath}/login.jsp">--%>
