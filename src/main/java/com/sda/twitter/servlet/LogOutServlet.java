@@ -16,3 +16,4 @@ public class LogOutServlet extends HttpServlet {
         res.sendRedirect("index.jsp");
     }
 }
+
