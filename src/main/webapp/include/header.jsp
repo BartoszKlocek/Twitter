@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%--trzbea zaimportowac w pom.xml maven jstl--%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <a class="navbar-brand" href="#">Navbar</a>
@@ -15,7 +17,19 @@
             <li class="nav-item">
                 <%--&lt;%&ndash;    <link href="css/bootstrap.css" rel="stylesheet">&ndash;%&gt; to jest skonfigurowany skrot - sciezka bezwzgledna--%>
                 <%--                <link href="${pageContext.request.contextPath}/login.jsp">--%>
-                <a class="nav-link" href="${pageContext.request.contextPath}login.jsp">Log in</a>
+                <%--                    tworzymy warunek do logOut--%>
+                <c:choose>
+
+                    <c:when test="${sessionScope.currentUser != null}">
+
+                        <a class="nav-link" href="${pageContext.request.contextPath}/logout">Log out</a>
+                    </c:when>
+                    <c:otherwise>
+                        <a class="nav-link" href="${pageContext.request.contextPath}/login.jsp">Log in</a>
+                    </c:otherwise>
+
+                </c:choose>
+
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#">Disabled</a>
