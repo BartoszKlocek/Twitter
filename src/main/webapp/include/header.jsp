@@ -12,7 +12,8 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="${pageContext.request.contextPath}/">Home<span
+                        class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <%--&lt;%&ndash;    <link href="css/bootstrap.css" rel="stylesheet">&ndash;%&gt; to jest skonfigurowany skrot - sciezka bezwzgledna--%>
