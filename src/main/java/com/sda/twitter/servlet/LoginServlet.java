@@ -31,20 +31,26 @@ public class LoginServlet extends HttpServlet {
             , HttpServletResponse response) throws IOException {
         String userName = request.getParameter("username");
         String password = request.getParameter("password");
+        String currentURIFromLoginJSP = request.getParameter("currentURIFromLoginJSP");
 
         try {
             TbUser tbUser = userService.getUserByUserName(userName, password);
 
             HttpSession session = request.getSession();
             session.setAttribute("currentUser", tbUser);
-            response.sendRedirect("/");
 
+            if (currentURIFromLoginJSP == null
+                    || currentURIFromLoginJSP.isEmpty()
+                    || "login.jsp".equals(currentURIFromLoginJSP)) {
+                response.sendRedirect("/");
+            } else {
+                response.sendRedirect(currentURIFromLoginJSP);
+            }
+            //response.sendRedirect("/");
         } catch (ImproperLoginCredentials improperLoginCredentials) {
             improperLoginCredentials.printStackTrace();
             response.sendRedirect("login.jsp");
         }
-
-
 //        zamiast ponizszego warunku jest try catch powyzej
 //        if (userName.equals("admin") && password.equals("password")) {
 //

@@ -16,20 +16,23 @@ public class LoginFilter implements Filter {
 
     @Override
     public void doFilter(
-            ServletRequest req
-            , ServletResponse response
+            ServletRequest servletRequest
+            , ServletResponse servletResponse
             , FilterChain chain) throws IOException, ServletException {
-        HttpServletRequest request1 = (HttpServletRequest) req;
-        final HttpSession session = request1.getSession();
+        HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
+        final HttpSession session = httpServletRequest.getSession();
         final TbUser currentUser = (TbUser) session.getAttribute("currentUser");
         if (currentUser == null) {
             //dispather to uzytkownik ma ten sam url a otowrzy sie inna strona
-            final RequestDispatcher requestDispatcher = req.getRequestDispatcher("login.jsp");
-            requestDispatcher.forward(req, response);
+            final String requestURI = httpServletRequest.getRequestURI();
+            httpServletRequest.setAttribute("currentURI", requestURI);
+
+            RequestDispatcher requestDispatcher = servletRequest.getRequestDispatcher("login.jsp");
+            requestDispatcher.forward(servletRequest, servletResponse);
         }
 
         //filt to lancuch zdarzn ktore maja sie wywolac
         //Filtr przesle zapytan dalej wiec wyswietli sie dalej ta sama strona
-        chain.doFilter(req, response);
+        chain.doFilter(servletRequest, servletResponse);
     }
 }
