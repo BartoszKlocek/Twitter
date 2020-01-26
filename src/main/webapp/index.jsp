@@ -20,20 +20,21 @@
     <%--        pageContext.setAttribute("articles", articles);--%>
     <%--    %>--%>
 
-    <div class="container">
-        <div ng-controller="articleController" ng-init="init()">
-            <div ng-repeat="article in articles">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-5">
-                        <h2>Heading</h2>
-                        <p>{{article.content}}</p>
-                        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        <div class="container">
+            <div ng-controller="articleController" ng-init="init()">
+                <h2>{{weather.main.temp}}&deg; C </h2>
+                <div ng-repeat="article in articles">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-5">
+                            <h2>Heading</h2>
+                            <p>{{article.content}}</p>
+                            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
 
-            <%--        wykomentowany bo uzywamy angulara--%>
+                <%--        wykomentowany bo uzywamy angulara--%>
             <%--    <div class="container">--%>
 
             <%--        <c:forEach items="${articles}" var="article">--%>

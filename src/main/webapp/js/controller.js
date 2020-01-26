@@ -14,5 +14,23 @@ articleApp.controller('articleController', function ($scope, $http) {
                 $scope.articles = response.data
             }
         );
+
+        // WSTAWIEIE DANYCH Z PROGNOZY POGODY:
+        // mozna utworzyc nowy kontrolere , ale uzyjemy istniejacego ('aticelControler' , ktory istnieje wyzej
+        $http({
+            method: 'GET',
+            url: 'https://api.openweathermap.org/data/2.5/weather',
+            params: {
+                appid: '3fa1ec55ba4c2e76aa0615ecfd48875f',
+                q: 'Lublin,pl',
+                units: 'metric'
+
+            }
+
+        }).then(
+            function (response) {
+                $scope.weather = response.data
+            }
+        );
     };
 });
